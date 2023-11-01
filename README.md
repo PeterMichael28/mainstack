@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MainStack Technical Test Phase 1
 
-## Getting Started
+Welcome to the MainStack technical test project. This project was created using Next.js, TypeScript, and Shadcn for UI components.
 
-First, run the development server:
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-```bash
+## Project Overview
+
+This project is a technical test for MainStack. It showcases your skills in building web applications using modern web technologies. The project includes features and components developed with Next.js, TypeScript, and Shadcn.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+git clone https://github.com/your-username/mainstack-technical-test.git
+
+
+2. Change into the project directory:
+
+cd mainstack-technical-test
+
+
+3. Install the project dependencies:
+
+npm install
+
+
+4. Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project will be accessible at [http://localhost:3000](http://localhost:3000) in your web browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/): A popular React framework for building web applications.
+- [TypeScript](https://www.typescriptlang.org/): A statically typed superset of JavaScript.
+- [Shadcn](https://shadcn.com/): A UI component library used for creating user interfaces.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you'd like to contribute to this project, please follow these guidelines:
 
-## Deploy on Vercel
+1. Fork the project on GitHub.
+2. Create a new branch with a descriptive name.
+3. Make your changes and commit them.
+4. Push your branch to your fork.
+5. Create a pull request to the main repository.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
