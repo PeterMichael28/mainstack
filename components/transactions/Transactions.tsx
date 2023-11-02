@@ -28,28 +28,26 @@ const Transactions = ({
 
  const [allTransactions, setAllTransactions] =
   useState(transactionData);
- //  console.log(Array.from(searchParams.keys()));
 
- useEffect(() => {
   const time = searchParams.get('time');
   const status = searchParams.get('status');
-  const type = searchParams.get('type');
+  const type = searchParams.get( 'type' );
+  
+  
+  useEffect( () => {
+    
+    const filterData = {
+      dateRange: time,
+      transactionTypes: type?.split(','),
+      transactionStatus: status?.split(','),
+    };
+    const filteredTransactions = filterData.dateRange || filterData.transactionTypes || filterData.transactionStatus
+  ? filterTransactions(transactionData, filterData)
+  : transactionData;
 
-  const filterData = {
-   dateRange: time,
-   transactionTypes: type?.split(','),
-   transactionStatus: status?.split(','),
-  };
-  if (time || status || type) {
-   const filteredTransactions = filterTransactions(
-    transactionData,
-    filterData,
-   );
-   setAllTransactions(filteredTransactions);
-  } else {
-   setAllTransactions(transactionData);
-  }
- }, [searchParams, transactionData]);
+// Set the allTransactions state to the filtered or unfiltered transactions, depending on whether any filter is set.
+setAllTransactions(filteredTransactions)
+  }, [searchParams, status, time, transactionData, type]);
 
  //  console.log(allTransactions);
  return (
@@ -90,7 +88,7 @@ const Transactions = ({
       } else {
        return (
         <WithdrawalTransactionCard
-         key={transaction?.date}
+         key={Math.ceil(Math.random() * 200)}
          transaction={transaction}
         />
        );
