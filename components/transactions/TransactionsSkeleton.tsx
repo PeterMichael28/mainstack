@@ -19,7 +19,7 @@ const trans = {
     status: "successful",
     type: "deposit",
     date: "2022-03-03"
-  },
+  }
 
 const TransactionsSkeleton = (props: Props) => {
  return (
