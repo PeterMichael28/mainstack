@@ -5,8 +5,7 @@ Welcome to the MainStack technical test project. This project was created using 
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
+
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)

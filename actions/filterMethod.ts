@@ -9,33 +9,41 @@ export function filterTransactions(transactions: any, filters: any) {
     const currentDate = new Date();
     let startDate: Date | null, endDate: Date | null;
    
-    if (dateRange === "Today") {
-      startDate = new Date(currentDate);
-      endDate = new Date(currentDate);
-    } else if (dateRange === "yesterday") {
-      currentDate.setDate(currentDate.getDate() - 1);
-      startDate = new Date(currentDate);
-      endDate = new Date(currentDate);
-    } else if (dateRange === "Last 7 days") {
-      currentDate.setDate(currentDate.getDate() - 7);
-      startDate = new Date(currentDate);
-      endDate = new Date();
-    } else if (dateRange === "This Month") {
-      currentDate.setMonth(currentDate.getMonth());
-      startDate = new Date(currentDate);
-      endDate = new Date();
-    } else if (dateRange === "Last 3 Months") {
-      currentDate.setMonth(currentDate.getMonth() - 3);
-      startDate = new Date(currentDate);
-      endDate = new Date();
-    } else if (dateRange?.split('-')) {
-      startDate = dateRange?.split('-')[0];
-      endDate = dateRange?.split('-')[1];
-    } else {
-      // Handle invalid date range
-      startDate = null;
-      endDate = null;
-    }
+    switch (dateRange) {
+  case "Today":
+    startDate = new Date(currentDate);
+    endDate = new Date(currentDate);
+    break;
+  case "yesterday":
+    currentDate.setDate(currentDate.getDate() - 1);
+    startDate = new Date(currentDate);
+    endDate = new Date(currentDate);
+    break;
+  case "Last 7 days":
+    currentDate.setDate(currentDate.getDate() - 7);
+    startDate = new Date(currentDate);
+    endDate = new Date();
+    break;
+  case "This Month":
+    currentDate.setMonth(currentDate.getMonth());
+    startDate = new Date(currentDate);
+    endDate = new Date();
+    break;
+  case "Last 3 Months":
+    currentDate.setMonth(currentDate.getMonth() - 3);
+    startDate = new Date(currentDate);
+    endDate = new Date();
+    break;
+  case dateRange?.split('-'):
+    startDate = dateRange?.split('-')[0];
+    endDate = dateRange?.split('-')[1];
+    break;
+  default:
+    // Handle invalid date range
+    startDate = null;
+    endDate = null;
+    break;
+}
     
     return transactions.filter((transaction: { date: any; type: any; status: any; }) => {
       const { date, type, status } = transaction;
