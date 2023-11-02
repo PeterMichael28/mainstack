@@ -5,7 +5,23 @@ import { Button } from '../ui/button';
 import DepositTransactionCard from './DepositTransactionCard';
 type Props = {};
 
-const Transactions = (props: Props) => {
+const trans = {
+    amount: 500,
+    metadata: {
+      name: "John Doe",
+      type: "digital_product",
+      email: "johndoe@example.com",
+      quantity: 1,
+      country: "Nigeria",
+      product_name: "Rich Dad Poor Dad"
+    },
+    payment_reference: "c3f7123f-186f-4a45-b911-76736e9c5937",
+    status: "successful",
+    type: "deposit",
+    date: "2022-03-03"
+  },
+
+const TransactionsSkeleton = (props: Props) => {
  return (
   <section className="py-8 ">
    {/* heading */}
@@ -35,7 +51,7 @@ const Transactions = (props: Props) => {
       <DepositTransactionCard
        key={transaction}
        loading={true}
-       transaction={transaction}
+       transaction={trans}
       />
      );
     })}
@@ -44,4 +60,4 @@ const Transactions = (props: Props) => {
  );
 };
 
-export default Transactions;
+export default TransactionsSkeleton;
